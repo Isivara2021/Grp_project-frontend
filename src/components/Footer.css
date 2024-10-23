@@ -1,0 +1,25 @@
+.footer {
+    background: linear-gradient(to right, #8B0000, black);
+    color: white; /* White text */
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .footer-text {
+    margin-bottom: 10px;
+  }
+  
+  .footer-links {
+    margin-top: 10px;
+  }
+  
+  .footer-link {
+    color: white;
+    margin: 0 10px;
+    text-decoration: none;
+  }
+  
+  .footer-link:hover {
+    text-decoration: underline; /* Underline on hover */
+  }
+  
