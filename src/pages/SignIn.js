@@ -1,6 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../styles/SignIn.css'; // Import the CSS for styling
+import BackButton from '../components/BackButton'; 
 
 const SignIn = () => {
   const navigate = useNavigate();
@@ -14,10 +15,6 @@ const SignIn = () => {
 
   const handleCreateAccount = () => {
     navigate('/create-account'); // Navigate to the Create Account page
-  };
-
-  const handleBack = () => {
-    navigate('/'); // Navigate to the homepage or previous page
   };
 
   return (
@@ -45,7 +42,7 @@ const SignIn = () => {
         <a href="sample@gmail.com">sample@gmail.com</a>
       </div>
 
-      <button onClick={handleBack} className="back-button">Back</button>
+      <BackButton />
     </div>
   );
 };

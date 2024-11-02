@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';  // Import useNavigate
 import '../styles/CreateAccountForm.css';
+import BackButton from '../components/BackButton';
 
 const CreateAccountForm = () => {
   const [formData, setFormData] = useState({
@@ -35,11 +36,6 @@ const CreateAccountForm = () => {
     e.preventDefault();
     // Form submission logic
     console.log('Form data submitted:', formData);
-  };
-
-  // Handle back navigation
-  const handleBackClick = () => {
-    navigate('/sign-in');  // Navigate back to the Sign In page
   };
 
   return (
@@ -253,7 +249,7 @@ const CreateAccountForm = () => {
 
         {/* Back Button */}
         <div>
-          <button type="button" onClick={handleBackClick}>Back</button>
+        <BackButton />
         </div>
       </form>
     </div>

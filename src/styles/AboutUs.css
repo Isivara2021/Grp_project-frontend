@@ -1,0 +1,77 @@
+/* Container */
+.container {
+    position: relative;
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    color: black;
+}
+
+.container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('../images/AboutUsBG.jpg');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.5; /* Adjust opacity (0.0 to 1.0) */
+    z-index: -1; /* Place it behind the text */
+}
+
+/* About Section */
+.about-section {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+/* Title */
+.title {
+    font-size: 36px;
+    background: linear-gradient(to right, #FF0404, black);
+    -webkit-background-clip: text; /* For Safari */
+    -webkit-text-fill-color: transparent; /* For WebKit browsers */
+    color: transparent; /* For non-WebKit browsers */
+    display: inline-block; /* Ensures the gradient only covers the text */
+}
+
+
+/* Description */
+.description {
+    font-size: 24px;
+    font-weight: 700;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+/* Contact Section */
+.contact-section {
+    display: flex; /* Use flexbox to align items */
+    justify-content: space-between; /* Distribute items evenly */
+    gap: 20px; /* Space between items */
+    flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+}
+
+.contact-item {
+    display: flex; /* Retain flex display for icon and text alignment */
+    align-items: center; /* Center items vertically */
+    gap: 10px; /* Space between icon and text */
+    margin: auto;
+}
+
+.contact-item .img{
+    width: 60px;
+    height: auto; 
+}
+
+.contact-link {
+    color: blue;
+    text-decoration: none;
+}
+
+.back-button-container {
+    display: flex;
+    justify-content: flex-end; /* Align the back button to the right */
+    margin-bottom: 20px; /* Add space below the back button */
+}

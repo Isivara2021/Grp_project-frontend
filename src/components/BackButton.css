@@ -1,0 +1,14 @@
+.back-button {
+    margin-top: 20px;
+    padding: 10px 30px;
+    background: linear-gradient(to right, #C11B1B, black);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  
+  .back-button:hover {
+    background-color: #660000;
+  }

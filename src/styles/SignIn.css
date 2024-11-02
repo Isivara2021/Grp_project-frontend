@@ -13,7 +13,7 @@
     -webkit-background-clip: text; /* Clip the background to the text */
     -webkit-text-fill-color: transparent; /* Make the text color transparent */
     margin-bottom: 20px;
-}
+  }
 
   
   .signin-form {
@@ -54,7 +54,7 @@
     cursor: pointer;
     margin-top: 10px;
     font-weight: bold;
-}
+ }
 
   
   .signin-button:hover {
@@ -85,7 +85,7 @@
     -webkit-background-clip: text; /* Clip the background to the text */
     background-clip: text; /* For standard compatibility */
     font-weight: bold;
-}
+ }
   
   .create-account-button:hover {
     background-color: #f5f5f5;

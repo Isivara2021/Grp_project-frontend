@@ -4,7 +4,6 @@ import Navbar from './components/Navbar'; // Importing Navbar
 import Footer from './components/Footer'; // Importing Footer
 import Home from './pages/Home'; // Importing page components
 import AboutUs from './pages/AboutUs';
-import ContactUs from './pages/ContactUs';
 import SignIn from './pages/SignIn'; // Importing SignIn page
 import CreateAccount from './pages/CreateAccount'; // Importing Create Account page
 import BloodAvailability from './pages/BloodAvailability';
@@ -24,13 +23,13 @@ const App = () => {
           <Route path="/" element={<Navigate to="/sign-in" />} /> {/* Redirect to SignIn page */}
           <Route path="/home" element={<Home />} />
           <Route path="/about-us" element={<AboutUs />} />
-          <Route path="/contact-us" element={<ContactUs />} />
           <Route path="/blood-availability" element={<BloodAvailability />} />
           <Route path="/blood-bank" element={<BloodBank />} />
           <Route path="/blood-donation-camp" element={<BloodDonationCamp />} />
           <Route path="/blood-education" element={<BloodEducation />} />
           <Route path="/sign-in" element={<SignIn />} /> {/* SignIn Route */}
           <Route path="/create-account" element={<CreateAccount />} /> {/* Create Account Route */}
+          <Route path="/contact-us" element={<Navigate to="/about-us" />} /> {/* Redirect Contact Us to About Us */}
         </Routes>
 
         {/* Footer visible on all pages */}
