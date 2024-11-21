@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';  // Import useNavigate
+import { useNavigate } from 'react-router-dom'; // Import useNavigate
 import '../styles/CreateAccountForm.css';
 import BackButton from '../components/BackButton';
 
@@ -17,25 +17,34 @@ const CreateAccountForm = () => {
     district: '',
     companyName: '',
     address: '',
-    emailUpdates: 'no',  // Initial value set to 'no'
+    emailUpdates: 'no',
   });
 
+  const [error, setError] = useState(''); // State to handle errors
   const navigate = useNavigate(); // Initialize navigate
 
   // Handle form changes
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value,
-    });
+    setFormData({ ...formData, [name]: value });
   };
 
   // Handle form submission
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Form submission logic
+    setError(''); // Clear previous error
+
+    // Check if passwords match
+    if (formData.password !== formData.verifyPassword) {
+      setError('Passwords do not match.');
+      return;
+    }
+
+    // Simulate successful registration logic
     console.log('Form data submitted:', formData);
+
+    // Navigate to the Home page after submission
+    navigate('/home');
   };
 
   return (
@@ -43,8 +52,9 @@ const CreateAccountForm = () => {
       <h1>Create Account</h1>
       <form onSubmit={handleSubmit}>
         <div className="form-column">
-          {/* Email Field */}
-          <label><span style={{ color: 'red' }}>*</span> Email Address</label>
+          <label>
+            <span style={{ color: 'red' }}>*</span> Email Address
+          </label>
           <input
             type="email"
             name="email"
@@ -53,8 +63,9 @@ const CreateAccountForm = () => {
             required
           />
 
-          {/* Username Field */}
-          <label><span style={{ color: 'red' }}>*</span> User Name</label>
+          <label>
+            <span style={{ color: 'red' }}>*</span> User Name
+          </label>
           <input
             type="text"
             name="username"
@@ -63,8 +74,9 @@ const CreateAccountForm = () => {
             required
           />
 
-          {/* Password Field */}
-          <label><span style={{ color: 'red' }}>*</span> Password</label>
+          <label>
+            <span style={{ color: 'red' }}>*</span> Password
+          </label>
           <input
             type="password"
             name="password"
@@ -73,8 +85,9 @@ const CreateAccountForm = () => {
             required
           />
 
-          {/* Verify Password Field */}
-          <label><span style={{ color: 'red' }}>*</span> Verify Password</label>
+          <label>
+            <span style={{ color: 'red' }}>*</span> Verify Password
+          </label>
           <input
             type="password"
             name="verifyPassword"
@@ -83,8 +96,9 @@ const CreateAccountForm = () => {
             required
           />
 
-          {/* Role Selection */}
-          <label><span style={{ color: 'red' }}>*</span> Your Role</label>
+          <label>
+            <span style={{ color: 'red' }}>*</span> Your Role
+          </label>
           <select
             name="role"
             value={formData.role}
@@ -97,8 +111,9 @@ const CreateAccountForm = () => {
             <option value="guest">Guest</option>
           </select>
 
-          {/* First Name Field */}
-          <label><span style={{ color: 'red' }}>*</span> First Name</label>
+          <label>
+            <span style={{ color: 'red' }}>*</span> First Name
+          </label>
           <input
             type="text"
             name="firstName"
@@ -107,7 +122,6 @@ const CreateAccountForm = () => {
             required
           />
 
-          {/* Last Name Field */}
           <label>Last Name</label>
           <input
             type="text"
@@ -118,8 +132,9 @@ const CreateAccountForm = () => {
         </div>
 
         <div className="form-column">
-          {/* Address Type Field */}
-          <label><span style={{ color: 'red' }}>*</span> Address Type</label>
+          <label>
+            <span style={{ color: 'red' }}>*</span> Address Type
+          </label>
           <select
             name="addressType"
             value={formData.addressType}
@@ -130,8 +145,9 @@ const CreateAccountForm = () => {
             <option value="work">Work</option>
           </select>
 
-          {/* Province Selection */}
-          <label><span style={{ color: 'red' }}>*</span> Province</label>
+          <label>
+            <span style={{ color: 'red' }}>*</span> Province
+          </label>
           <select
             name="province"
             value={formData.province}
@@ -150,7 +166,6 @@ const CreateAccountForm = () => {
             <option value="province9">Western Province</option>
           </select>
 
-          {/* District Selection */}
           <label>District</label>
           <select
             name="district"
@@ -185,8 +200,9 @@ const CreateAccountForm = () => {
             <option value="district25">Vavuniya</option>
           </select>
 
-          {/* Company Name Field */}
-          <label><span style={{ color: 'red' }}>*</span> Company Name</label>
+          <label>
+            <span style={{ color: 'red' }}>*</span> Company Name
+          </label>
           <input
             type="text"
             name="companyName"
@@ -195,7 +211,6 @@ const CreateAccountForm = () => {
             required
           />
 
-          {/* Address Field */}
           <label>Address</label>
           <textarea
             name="address"
@@ -203,7 +218,6 @@ const CreateAccountForm = () => {
             onChange={handleChange}
           ></textarea>
 
-          {/* Email Updates */}
           <div className="email-updates">
             <label>Sign up for email updates</label>
             <div className="radio-buttons">
@@ -233,23 +247,21 @@ const CreateAccountForm = () => {
               </div>
             </div>
           </div>
-
         </div>
 
-        {/* Submit Button */}
+        {error && <p className="error">{error}</p>} {/* Display error if exists */}
+
         <div className="form-actions">
           <button type="submit">Register</button>
         </div>
 
-        {/* Help Section */}
         <div className="help-section">
           <span>Need help? </span>
           <a href="mailto:sample@gmail.com">sample@gmail.com</a>
         </div>
 
-        {/* Back Button */}
         <div>
-        <BackButton />
+          <BackButton />
         </div>
       </form>
     </div>

@@ -12,7 +12,7 @@ const Navbar = () => {
       </div>
       <div className="nav-icons">
         <span className="notification-icon">🔔</span>
-        <span className="user-icon">👤</span>
+        <Link to="/profile" className="user-icon">👤</Link>
       </div>
       <ul className="nav-links">
         <li><Link to="/home">Home</Link></li>

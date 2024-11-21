@@ -1,0 +1,92 @@
+/* General styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f8f8;
+  }
+  
+  .profile-page {
+    min-height: 100vh; /* Ensure it covers the viewport height */
+    padding: 50px;
+    background-image: url('../images/BloodAvailabilityBG.jpg');
+    background-size: cover; /* Ensure the image covers the whole page */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Prevent tiling of the image */
+  }
+  
+  .profile-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .profile-header h1 {
+    text-align: left;
+    font-weight: 700;
+    background: linear-gradient(to right, #FF0404, black);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+    color: transparent;
+    font-size: 2em;
+    margin: 10px;
+  }
+  
+  .welcome-message {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 30px;
+    color: #444;
+  }
+  
+  .profile-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+  }
+  
+  /* Card styling */
+  .card {
+    background: #fff;
+    margin-left: 70px;
+    margin-right: 70px;
+    padding: 20px;
+    border: 5px solid #E79292;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    flex: 1;
+  }
+  
+  .card h2 {
+    background: linear-gradient(to right, #FF0404, black); /* Gradient colors */
+    -webkit-background-clip: text; /* Clips the background to the text */
+    -webkit-text-fill-color: transparent; /* Makes the text itself transparent to show the background */
+    display: inline-block;
+    font-weight: bold; /* Optional: Add bold styling if desired */
+    margin-bottom: 15px;
+  }
+  
+  .details p {
+    margin: 20px 0;
+    color: rgb(94, 91, 91);
+  }
+  
+  .details span {
+    font-weight: bold;
+    color: black;
+  }
+  
+  .activity-placeholder {
+    width: 100%;
+    height: 50px;
+    border-radius: 5px;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .profile-container {
+      flex-direction: column;
+    }
+  }
+  
