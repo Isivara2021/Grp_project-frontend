@@ -1,6 +1,6 @@
 import React from 'react';
 import '../styles/Home.css';
-import BloodChartImage from '../images/BloodChart.png';
+import HomeImage from '../images/Home.jpeg';
 import BloodAvailabilityImage from '../images/BloodAvailability.jpg';
 import BloodBankImage from '../images/BloodBank.jpg';
 import BloodDonationCampImage from '../images/BloodDonationCamp.jpg';
@@ -9,17 +9,15 @@ import BloodEducationImage from '../images/BloodEducation.jpg';
 function Home() {
   return (
     <div className="home">
-      <header className="home-header">
-        <h1>Welcome to Red-LifeStream!</h1>
-        <div className="home-header-content">
-          <p>
-            A <span className="highlight">Red-LifeStream</span> collects, tests, processes, stores, and distributes blood. It ensures safe and compatible blood for transfusions and emergencies through strict donor screening, blood type matching, and infectious disease testing. Blood banks manage inventory to meet hospital demands, playing a crucial role in life-saving medical treatments.
-          </p>
-          <div className="chart">
-            <img src={BloodChartImage} alt="Blood Chart" />
-          </div>
+        <header className="home-header">
+      <div className="image-container">
+        <img src={HomeImage} alt="Home Image" className="home" />
+        <div className="overlay-text">
+          <h1 className="black-text">Welcome to </h1>
+          <h1 className="red-text">Red-LifeStream!</h1>
         </div>
-      </header>
+      </div>
+    </header>
 
       <div className="main-content">
         <div className="grid-item" onClick={() => window.location.href='/blood-availability'}>
