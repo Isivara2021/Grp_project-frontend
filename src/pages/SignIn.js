@@ -8,8 +8,6 @@ const SignIn = () => {
 
   const handleSignIn = (e) => {
     e.preventDefault();
-    // Logic for signing in can be added here
-    alert('Signed In'); // You may replace this with actual sign-in logic
     navigate('/home'); // Redirect to Home after signing in
   };
 
@@ -19,6 +17,7 @@ const SignIn = () => {
 
   return (
     <div className="signin-container">
+      <div className="signin-box">
       <h2 className="signin-title">Sign In</h2>
       <form onSubmit={handleSignIn} className="signin-form">
         <div className="input-group">
@@ -43,6 +42,7 @@ const SignIn = () => {
       </div>
 
       <BackButton />
+      </div>
     </div>
   );
 };

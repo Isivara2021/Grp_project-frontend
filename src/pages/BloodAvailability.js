@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import '../styles/BloodAvailability.css';
+import SearchButton from '../components/SearchButton';
 
 const BloodAvailability = () => {
   const [formData, setFormData] = useState({
@@ -97,9 +98,9 @@ const BloodAvailability = () => {
             </select>
           </div>
         </div>
-        <button className="search-button" onClick={handleSearch}>
-          Search
-        </button>
+        <div>
+          <SearchButton />
+        </div>
       </div>
 
       <table className="availability-table">

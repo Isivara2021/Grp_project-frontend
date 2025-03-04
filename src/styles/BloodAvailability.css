@@ -19,6 +19,7 @@
     color: transparent;
     font-size: 2em;
     margin: 50px;
+    padding-left: 50px;
   }
   
   .form-container {
@@ -53,20 +54,6 @@
     font-size: 14px;
     border: 1px solid #ccc;
     border-radius: 5px;
-  }
-  
-  .search-button {
-    background-color: #b71c1c;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
-  }
-  
-  .search-button:hover {
-    background-color: #d32f2f;
   }
   
   .availability-table {
