@@ -21,7 +21,7 @@ const Navbar = () => {
         <li><Link to="/blood-donation-camp">Blood Donation Camp</Link></li>
         <li><Link to="/blood-education">Blood Education</Link></li>
         <li><Link to="/about-us">About Us</Link></li>
-        <li><Link to="/about-us">Contact Us</Link></li>
+        <li><Link to="/contact-us">Contact Us</Link></li>
       </ul>
     </div>
   );

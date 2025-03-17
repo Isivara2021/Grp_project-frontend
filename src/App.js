@@ -4,6 +4,7 @@ import Navbar from './components/Navbar'; // Importing Navbar
 import Footer from './components/Footer'; // Importing Footer
 import Home from './pages/Home'; // Importing page components
 import AboutUs from './pages/AboutUs';
+import ContactUs from './pages/ContactUs';
 import SignIn from './pages/SignIn'; // Importing SignIn page
 import CreateAccount from './pages/CreateAccount'; // Importing Create Account page
 import BloodAvailability from './pages/BloodAvailability';
@@ -36,7 +37,7 @@ const App = () => {
         <Route path="/profile" element={<Profile />} /> {/* Added Profile route */}
         <Route path="/sign-in" element={<SignIn />} /> {/* SignIn Route */}
         <Route path="/create-account" element={<CreateAccount />} /> {/* Create Account Route */}
-        <Route path="/contact-us" element={<Navigate to="/about-us" />} /> {/* Redirect Contact Us to About Us */}
+        <Route path="/contact-us" element={<ContactUs />} /> {/* Redirect to Contact Us */}
       </Routes>
 
       {/* Conditionally render Footer */}
