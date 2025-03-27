@@ -5,13 +5,14 @@ import Footer from './components/Footer'; // Importing Footer
 import Home from './pages/Home'; // Importing page components
 import AboutUs from './pages/AboutUs';
 import ContactUs from './pages/ContactUs';
-import SignIn from './pages/SignIn'; // Importing SignIn page
-import CreateAccount from './pages/CreateAccount'; // Importing Create Account page
+import SignIn from './pages/SignIn';
+import CreateAccount from './pages/CreateAccount';
 import BloodAvailability from './pages/BloodAvailability';
 import BloodBank from './pages/BloodBank';
 import BloodDonationCamp from './pages/BloodDonationCamp';
 import BloodEducation from './pages/BloodEducation';
-import Profile from './pages/Profile'; // Importing Profile page
+import Profile from './pages/Profile';
+import DonationHistory from './pages/DonationHistory'; // Importing Donation History page
 
 const App = () => {
   const location = useLocation(); // Get the current location
@@ -34,10 +35,11 @@ const App = () => {
         <Route path="/blood-bank" element={<BloodBank />} />
         <Route path="/blood-donation-camp" element={<BloodDonationCamp />} />
         <Route path="/blood-education" element={<BloodEducation />} />
-        <Route path="/profile" element={<Profile />} /> {/* Added Profile route */}
-        <Route path="/sign-in" element={<SignIn />} /> {/* SignIn Route */}
-        <Route path="/create-account" element={<CreateAccount />} /> {/* Create Account Route */}
-        <Route path="/contact-us" element={<ContactUs />} /> {/* Redirect to Contact Us */}
+        <Route path="/profile" element={<Profile />} />
+        <Route path="/sign-in" element={<SignIn />} />
+        <Route path="/create-account" element={<CreateAccount />} />
+        <Route path="/contact-us" element={<ContactUs />} />
+        <Route path="/donation-history" element={<DonationHistory />} />
       </Routes>
 
       {/* Conditionally render Footer */}

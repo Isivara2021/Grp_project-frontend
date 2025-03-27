@@ -1,8 +1,8 @@
-// Navbar.js
 import React from 'react';
-import { Link } from 'react-router-dom'; // Use Link for navigation
-import './Navbar.css'; // CSS styling
-import logo from '../images/logo.png'; // Logo image
+import { Link } from 'react-router-dom';
+import { FaUserCircle, FaBell } from 'react-icons/fa'; // Import icons
+import './Navbar.css';
+import logo from '../images/logo.png';
 
 const Navbar = () => {
   return (
@@ -11,8 +11,12 @@ const Navbar = () => {
         <img src={logo} alt="Logo" className="logo-img" />
       </div>
       <div className="nav-icons">
-        <span className="notification-icon">🔔</span>
-        <Link to="/profile" className="user-icon">👤</Link>
+        <span className="notification-icon">
+          <FaBell size={24} />
+        </span>
+        <Link to="/profile" className="user-icon">
+          <FaUserCircle size={24} />
+        </Link>
       </div>
       <ul className="nav-links">
         <li><Link to="/home">Home</Link></li>

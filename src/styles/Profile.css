@@ -119,10 +119,24 @@
 }
 
 /* Donation History */
-.donation-history {
-  display: flex;
-  align-items: center;
-  justify-content: space-between; /* Ensures text and link stay inline */
+.donationhistory {
+  display: flex; /* Use flexbox to align the items horizontally */
+  justify-content: space-between; /* Distribute space between the h3 and link */
+  width: 100%; /* Ensure it takes up full width */
+  margin-bottom: 20px;
+}
+
+.donationhistory .donation-link-container {
+  margin-left: 10px; /* Optional, to space it out from the h3 */
+}
+
+.donationhistory .donation-link {
+  color: blue;
+  text-decoration: none;
+}
+
+.donationhistory .donation-link:hover {
+  text-decoration: underline;
 }
 
 .card h3 {
@@ -130,19 +144,6 @@
   font-size: 1em;
   color: black;
   margin: 0;
-}
-
-.donation-link-container {
-  margin-left: 10px;
-}
-
-.donation-link {
-  color: blue;
-  text-decoration: none;
-}
-
-.donation-link:hover {
-  text-decoration: underline;
 }
 
 /* Edit Button */

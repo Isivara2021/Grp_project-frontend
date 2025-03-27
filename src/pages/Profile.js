@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import '../styles/Profile.css';
 
 const Profile = ({ user }) => {
   const [isEditing, setIsEditing] = useState(false);
-  const [profileImage, setProfileImage] = useState(user?.profileImage || 'default-profile.png');
+  const [profileImage, setProfileImage] = useState(user?.profileImage || '/default-profile.png');
   const [userData, setUserData] = useState({
     firstName: user?.firstName ?? 'N/A',
     lastName: user?.lastName ?? 'N/A',
@@ -34,32 +35,33 @@ const Profile = ({ user }) => {
     if (file) {
       const imageURL = URL.createObjectURL(file);
       setProfileImage(imageURL);
+
+      // Revoke object URL after setting it (prevents memory leaks)
+      setTimeout(() => URL.revokeObjectURL(imageURL), 5000);
     }
   };
 
   return (
     <div className="profile-page">
-      {/* Header: Left (Profile Text & Welcome) / Right (Profile Picture) */}
+      {/* Header: Profile Title & Profile Picture */}
       <div className="profile-header">
-        {/* Left Section: Profile Title & Welcome Message */}
         <div className="profile-info">
-        <a href="/profile" className="profile-title">Profile</a>
-          <p className="welcome-message">Welcome Mr. {userData.firstName} {userData.lastName}!</p>
+          <Link to="/profile" className="profile-title">Profile</Link>
+          <p className="welcome-message">Welcome, Mr. {userData.firstName} {userData.lastName}!</p>
         </div>
-
-        {/* Right Section: Profile Picture */}
         <div className="profile-picture-container">
           <img src={profileImage} className="profile-picture" />
           {isEditing && <input type="file" accept="image/*" onChange={handleProfilePictureChange} />}
         </div>
       </div>
 
+      {/* Profile Details */}
       <div className="profile-container">
         {/* User Details */}
         <div className="card">
           <h2>User Details</h2>
           <div className="details">
-            {Object.entries(userData).map(([key, value]) => (
+            {Object.entries(userData).map(([key, value]) =>
               key !== "activities" && key !== "firstAccess" && key !== "lastAccess" ? (
                 <p key={key}>
                   <span>{key.replace(/([A-Z])/g, ' $1')}: </span>
@@ -70,16 +72,16 @@ const Profile = ({ user }) => {
                   )}
                 </p>
               ) : null
-            ))}
+            )}
           </div>
-          <div class="donation-history">
-            <h3><span>Donation History: </span></h3>
-            <div class="donation-link-container">
-              <a href="#DonationHistory" class="donation-link">Click here</a>
+
+          {/* Donation History Section */}
+          <div className="donationhistory">
+            <h3>Donation History:</h3>
+            <div className="donation-link-container">
+              <Link to="/donation-history" className="donation-link">Click here</Link>
             </div>
           </div>
-
-
         </div>
 
         {/* Login Activities */}
