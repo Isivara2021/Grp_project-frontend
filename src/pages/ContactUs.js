@@ -27,7 +27,7 @@ const ContactUs = () => {
       {/* Contact Details */}
       <div className="contact-section">
         <div className="contact-item">
-          <img src={generalEnquiriesImage} alt="General Enquiries" className="img"/>
+          <img src={generalEnquiriesImage} alt="General Enquiries" className="icon"/>
           <div>
             <p>General Enquiries</p>
             <a href="mailto:sample@gmail.com" className="contact-link">sample@gmail.com</a>
